@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPanel · Registrar Estudiante</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="page-form">
+
+    <div class="form-container">
+        <a href="/dash_principal" class="back-link">← Volver al dashboard</a>
+
+        <div class="card">
+            <div class="card-header card-header--accent">
+                <div class="header-icon header-icon--accent">👤</div>
+                <h1>Registrar Estudiante</h1>
+                <p class="subtitle">Completa los datos para agregar un nuevo estudiante</p>
+            </div>
+
+            <div class="card-body">
+                <form method="POST">
+                    <div class="form-row">
+                        <div class="form-group full">
+                            <label>Nombre completo</label>
+                            <input type="text" name="txtnombre" placeholder="Ej: Juan García">
+                        </div>
+                        <div class="form-group">
+                            <label>Edad</label>
+                            <input type="number" name="txtedad" placeholder="18" min="15" max="80">
+                        </div>
+                        <div class="form-group">
+                            <label>Carrera</label>
+                            <input type="text" name="txtcarrera" placeholder="Ej: Ingeniería">
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+                    <p class="section-label">Notas (escala 0.0 – 5.0)</p>
+
+                    <div class="notes-grid">
+                        <div class="form-group">
+                            <label>Nota 1</label>
+                            <input type="number" name="txtnota1" placeholder="0.0" step="0.1" min="0" max="5">
+                        </div>
+                        <div class="form-group">
+                            <label>Nota 2</label>
+                            <input type="number" name="txtnota2" placeholder="0.0" step="0.1" min="0" max="5">
+                        </div>
+                        <div class="form-group">
+                            <label>Nota 3</label>
+                            <input type="number" name="txtnota3" placeholder="0.0" step="0.1" min="0" max="5">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit btn-submit--accent">Registrar estudiante →</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
