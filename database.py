@@ -1,15 +1,16 @@
 import mysql.connector
+import os
 import pandas as pd
 
 
 def conectar():
     return mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='',
-        database='escuela'
+        host=os.getenv('MYSQLHOST'),
+        port=int(os.getenv('MYSQLPORT')),
+        user=os.getenv('MYSQLUSER'),
+        password=os.getenv('MYSQLPASSWORD'),
+        database=os.getenv('MYSQLDATABASE')
     )
-
 
 # ===============================
 # OBTENER USUARIO LOGIN
